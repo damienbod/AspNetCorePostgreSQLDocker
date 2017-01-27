@@ -2,7 +2,7 @@ version: '2'
 
 services:
   postgresserver:
-     image: damienbod/postgres-server
+     image: damienbodpostgres
      restart: always
      ports:
        - 5432:5432
