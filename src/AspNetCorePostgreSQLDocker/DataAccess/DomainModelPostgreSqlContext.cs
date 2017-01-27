@@ -9,7 +9,6 @@ namespace AspNetCorePostgreSQLDocker
     {
         public DomainModelPostgreSqlContext(DbContextOptions<DomainModelPostgreSqlContext> options) :base(options)
         {
-            //Database.EnsureCreated();
         }
         
         public DbSet<DataEventRecord> DataEventRecords { get; set; }
