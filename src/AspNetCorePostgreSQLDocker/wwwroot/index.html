@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ASP.NET Core PostgreSQL Docker</title>
+</head>
+<body>
+Web API is running
+
+<pre>
+GET
+
+http://localhost:5001/api/dataeventrecords
+</pre>
+
+<hr />
+
+<pre>
+
+POST http://localhost:5001/api/dataeventrecords HTTP/1.1
+User-Agent: Fiddler
+Host: localhost:5001
+Content-Length: 135
+Content-Type: application/json;
+  
+{
+  "DataEventRecordId":3,
+  "Name":"Funny data",
+  "Description":"yes",
+  "Timestamp":"2015-12-27T08:31:35Z",
+   "SourceInfo":
+  { 
+    "SourceInfoId":0,
+    "Name":"Beauty",
+    "Description":"second Source",
+    "Timestamp":"2015-12-23T08:31:35+01:00",
+    "DataEventRecords":[]
+  },
+ "SourceInfoId":0 
+}
+
+</pre>
+</body>
+</html>
