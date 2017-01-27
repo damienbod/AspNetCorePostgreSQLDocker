@@ -5,3 +5,4 @@ src/AspNetCoreVS2017Docker/obj
 .vs
 src/AspNetCorePostgreSQLDocker/bin
 src/AspNetCorePostgreSQLDocker/obj
+src/AspNetCorePostgreSQLDocker/AspNetCorePostgreSQLDocker.csproj.user
