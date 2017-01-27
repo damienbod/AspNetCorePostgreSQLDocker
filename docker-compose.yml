@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  postgresserver:
+     image: postgres
+     restart: always
+     ports:
+       - 5432:5432
+     environment:
+         POSTGRES_PASSWORD: damienbod
+     volumes:
+       - pgdata:/var/lib/postgresql/data
+
+  aspnetcorepostgresqldocker:
+    image: aspnetcorepostgresqldocker
+    ports:
+       - 5001:80
+    build:
+      context: ./src/AspNetCorePostgreSQLDocker
+      dockerfile: Dockerfile
+    links:
+      - postgresserver
+
+volumes:
+  pgdata:

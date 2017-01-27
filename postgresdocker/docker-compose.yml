@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  damienbodpostgres:
+     image: damienbodpostgres
+     restart: always
+     build:
+       context: .
+       dockerfile: Dockerfile
+     ports:
+       - 5432:5432
+     environment:
+         POSTGRES_PASSWORD: damienbod
+     volumes:
+       - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
