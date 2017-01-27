@@ -2,7 +2,7 @@ version: '2'
 
 services:
   postgresserver:
-     image: postgres
+     image: damienbod/postgres-server
      restart: always
      ports:
        - 5432:5432
@@ -10,16 +10,26 @@ services:
          POSTGRES_PASSWORD: damienbod
      volumes:
        - pgdata:/var/lib/postgresql/data
+     networks:
+       - mynetwork
 
   aspnetcorepostgresqldocker:
-    image: aspnetcorepostgresqldocker
-    ports:
+     image: aspnetcorepostgresqldocker
+     ports:
        - 5001:80
-    build:
-      context: ./src/AspNetCorePostgreSQLDocker
-      dockerfile: Dockerfile
-    links:
-      - postgresserver
+     build:
+       context: ./src/AspNetCorePostgreSQLDocker
+       dockerfile: Dockerfile
+     links:
+       - postgresserver
+     depends_on:
+       - "postgresserver"
+     networks:
+       - mynetwork
 
 volumes:
   pgdata:
+
+networks:
+  mynetwork:
+     driver: bridge

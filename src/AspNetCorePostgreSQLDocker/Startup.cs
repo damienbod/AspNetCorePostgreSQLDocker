@@ -26,7 +26,7 @@ namespace AspNetCorePostgreSQLDocker
         public void ConfigureServices(IServiceCollection services)
         {
             //Use a PostgreSQL database
-            var sqlConnectionString = "User ID=damienbod;Password=damienbod;Host=localhost;Port=5432;Database=damienbod;Pooling=true;"; //= Configuration.GetConnectionString("DataAccessPostgreSqlProvider");
+            var sqlConnectionString = "User ID=damienbod;Password=damienbod;Host=postgresserver;Port=5432;Database=damienbod;Pooling=true;"; //= Configuration.GetConnectionString("DataAccessPostgreSqlProvider");
 
             services.AddDbContext<DomainModelPostgreSqlContext>(
                 options => options.UseNpgsql(sqlConnectionString)
