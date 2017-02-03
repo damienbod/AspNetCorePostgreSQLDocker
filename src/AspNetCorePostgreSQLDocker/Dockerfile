@@ -1,6 +1,6 @@
-FROM microsoft/aspnetcore:1.1.0
+FROM microsoft/aspnetcore:1.1
 ARG source
 WORKDIR /app
 EXPOSE 80
-COPY ${source:-bin/Release/PublishOutput} .
+COPY ${source:-obj/Docker/publish} .
 ENTRYPOINT ["dotnet", "AspNetCorePostgreSQLDocker.dll"]
